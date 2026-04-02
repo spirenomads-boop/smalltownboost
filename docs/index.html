@@ -411,20 +411,69 @@
 
         .faq-grid {
             display: grid;
-            gap: 20px;
+            gap: 15px;
             margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .faq-item {
             background: white;
-            padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid var(--secondary);
+            border: 1px solid var(--border);
+            overflow: hidden;
         }
 
-        .faq-item h4 {
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .faq-header:hover {
+            background: #f9f9f9;
+        }
+
+        .faq-header h4 {
             color: var(--secondary);
-            margin-bottom: 10px;
+            margin: 0;
+            flex: 1;
+            font-size: 1em;
+        }
+
+        .faq-toggle {
+            font-size: 1.5em;
+            color: var(--secondary);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .faq-toggle.open {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+        }
+
+        .faq-content.open {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+        }
+
+        .faq-content p {
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
         }
 
         /* Contact Section */
@@ -790,43 +839,83 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-grid">
             <div class="faq-item">
-                <h4>How long does installation actually take?</h4>
-                <p>Roughly 1 day if you're prepared and have a shop or fabrication experience. Professional installation is recommended for best results and peace of mind.</p>
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h4>How long does installation actually take?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-content">
+                    <p>Roughly 1 day if you're prepared and have a shop or fabrication experience. Professional installation is recommended for best results and peace of mind.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h4>Will this fit my M13A?</h4>
-                <p>Yes, it's specifically designed for the Suzuki Jimny M13A (2007+). Perfect fit, proven on multiple vehicles.</p>
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h4>Will this fit my M13A?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-content">
+                    <p>Yes, it's specifically designed for the Suzuki Jimny M13A (2007+). Perfect fit, proven on multiple vehicles.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h4>Is ECU tuning really necessary?</h4>
-                <p><strong>YES.</strong> Proper tuning is critical for reliability and performance. This kit is designed to work with 91 octane fuel and stock ECU at modest boost, but professional calibration is strongly recommended for safety and longevity.</p>
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h4>Is ECU tuning really necessary?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-content">
+                    <p><strong>YES.</strong> Proper tuning is critical for reliability and performance. This kit is designed to work with 91 octane fuel and stock ECU at modest boost, but professional calibration is strongly recommended for safety and longevity.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h4>Why the M65 and not a different supercharger?</h4>
-                <p>The M65 is the sweet spot for the M13A. It offers the best balance of power, reliability, and drivability. Larger units add complexity; smaller ones don't deliver enough low-end torque.</p>
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h4>Why the M65 and not a different supercharger?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-content">
+                    <p>The M65 is the sweet spot for the M13A. It offers the best balance of power, reliability, and drivability. Larger units add complexity; smaller ones don't deliver enough low-end torque.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h4>How much power am I getting?</h4>
-                <p>Expect significant low-end torque gains—exactly what Jimny owners need for rock crawling, trails, and daily driving. The M65 delivers consistent, usable power across the RPM range.</p>
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h4>How much power am I getting?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-content">
+                    <p>Expect significant low-end torque gains—exactly what Jimny owners need for rock crawling, trails, and daily driving. The M65 delivers consistent, usable power across the RPM range.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h4>What's the reliability story?</h4>
-                <p>The Eaton M65 is a proven OEM unit built to last. Seals and bearings rarely need servicing. When they do, rebuild kits are readily available and inexpensive.</p>
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h4>What's the reliability story?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-content">
+                    <p>The Eaton M65 is a proven OEM unit built to last. Seals and bearings rarely need servicing. When they do, rebuild kits are readily available and inexpensive.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h4>Can I see it installed?</h4>
-                <p>Absolutely. Check out the photo gallery and build/performance videos above. This is the real prototype on Travis's personal Jimny—you're seeing exactly what you'll get.</p>
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h4>Can I see it installed?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-content">
+                    <p>Absolutely. Check out the photo gallery and build/performance videos above. This is the real prototype on Travis's personal Jimny—you're seeing exactly what you'll get.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h4>What if I'm not mechanically inclined?</h4>
-                <p>No problem. We can connect you with shops that specialize in Jimny performance work. Professional installation is always the safest, smartest option.</p>
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h4>What if I'm not mechanically inclined?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-content">
+                    <p>No problem. We can connect you with shops that specialize in Jimny performance work. Professional installation is always the safest, smartest option.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -853,5 +942,24 @@
         <p>&copy; 2026 Smalltownboost. All rights reserved.</p>
         <p>Built for Jimny lovers. Trail-proven. Reliable. Simple.</p>
     </footer>
+
+    <script>
+        function toggleFAQ(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.faq-toggle');
+
+            // Close all other FAQs
+            document.querySelectorAll('.faq-content').forEach(c => {
+                if (c !== content) {
+                    c.classList.remove('open');
+                    c.previousElementSibling.querySelector('.faq-toggle').classList.remove('open');
+                }
+            });
+
+            // Toggle current FAQ
+            content.classList.toggle('open');
+            toggle.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
