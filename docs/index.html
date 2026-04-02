@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bolt-on Eaton M65 Supercharger Bracket Kit for Suzuki Jimny M13A. Massive torque gains, trail-proven performance.">
+    <meta name="description" content="Eaton M65 Supercharger Kit for Suzuki Jimny M13A - Premium performance upgrade">
     <title>Jimny M65 Supercharger Kit - Smalltownboost</title>
     <style>
         * {
@@ -12,53 +12,56 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --primary: #d32f2f;
-            --secondary: #1976d2;
             --dark: #1a1a1a;
             --light: #f5f5f5;
             --text: #333;
-            --border: #ddd;
-            --success: #4caf50;
+            --white: #ffffff;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
             color: var(--text);
+            background: var(--white);
             line-height: 1.6;
-            background: #fff;
         }
 
         /* Navigation */
         nav {
-            background: white;
-            color: var(--dark);
-            padding: 15px 0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            color: white;
+            padding: 20px 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bold;
             color: var(--primary);
         }
 
         nav a {
-            color: var(--text);
+            color: white;
             text-decoration: none;
-            margin-left: 25px;
+            margin-left: 40px;
             font-size: 0.95em;
             transition: color 0.3s;
         }
@@ -67,371 +70,302 @@
             color: var(--primary);
         }
 
-        /* Hero Section */
+        /* Hero Section - Full bleed with image */
         .hero {
+            width: 100%;
+            height: 100vh;
             background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('hero-placeholder.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            z-index: 1;
         }
 
         .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero img {
-            max-width: 240px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: var(--primary);
+            position: relative;
+            z-index: 10;
+            text-align: center;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            max-width: 900px;
+            padding: 0 40px;
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 5em;
+            font-weight: 900;
+            line-height: 1.1;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            letter-spacing: -2px;
         }
 
         .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
+            font-size: 1.4em;
+            margin-bottom: 40px;
             opacity: 0.95;
+            font-weight: 300;
         }
 
-        .cta-button {
+        .cta-primary {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 15px 40px;
-            font-size: 1.1em;
-            border-radius: 5px;
+            padding: 16px 50px;
+            font-size: 1em;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            font-weight: bold;
+            font-weight: 600;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
-            margin: 10px;
         }
 
-        .cta-button:hover {
+        .cta-primary:hover {
             background: #b71c1c;
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
         }
 
-        .cta-secondary {
-            background: transparent;
-            border: 2px solid white;
+        /* Specs Section */
+        .specs {
+            background: var(--dark);
+            color: white;
+            padding: 80px 40px;
         }
 
-        .cta-secondary:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* Problem Section */
-        .problem-section {
-            background: #fff3e0;
-            padding: 60px 20px;
-        }
-
-        .problem-content {
-            max-width: 1000px;
+        .specs-container {
+            max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
 
-        .problem-content h2 {
+        .specs-content h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .specs-content p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .spec-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .spec-item {
+            border-left: 3px solid var(--primary);
+            padding-left: 20px;
+        }
+
+        .spec-item h4 {
+            font-size: 1.2em;
+            margin-bottom: 8px;
             color: var(--primary);
         }
 
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        .spec-item p {
+            font-size: 0.95em;
+            opacity: 0.7;
+            margin: 0;
         }
 
-        .problem-card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            border-top: 4px solid var(--primary);
+        .logo-specs {
+            max-width: 300px;
         }
 
-        .problem-card h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        /* Solution Section */
-        .solution-section {
-            background: white;
-            padding: 60px 20px;
-        }
-
-        .solution-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .solution-content h2 {
-            color: var(--dark);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .benefit-card {
+        /* Videos Section */
+        .videos {
             background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 4px solid var(--success);
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 80px 40px;
         }
 
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .benefit-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-
-        .benefit-card h3 {
-            margin-bottom: 10px;
-            color: var(--success);
-        }
-
-        /* Section Styling */
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        h2 {
-            font-size: 2.2em;
-            margin-bottom: 40px;
-            color: var(--dark);
+        .videos h2 {
+            font-size: 3em;
             text-align: center;
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-        }
-
-        /* Video Section */
-        .videos-section {
-            background: var(--light);
+            margin-bottom: 60px;
+            font-weight: 900;
         }
 
         .video-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-            justify-items: center;
+            gap: 30px;
         }
 
-        .video-item {
-            text-align: center;
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .video-label {
-            font-weight: bold;
+            padding: 20px;
+            font-weight: 600;
             color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.1em;
         }
 
-        .video-item iframe {
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            border: none;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
+        /* Gallery */
+        .gallery {
+            padding: 80px 40px;
             background: white;
         }
 
+        .gallery h2 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 900;
+        }
+
         .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-top: 40px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
         }
 
         .gallery-item img {
             width: 100%;
             height: 400px;
             object-fit: cover;
-            display: block;
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            padding: 30px 20px 20px;
-            transform: translateY(100%);
+            border-radius: 8px;
             transition: transform 0.3s;
         }
 
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
-
-        /* Specs Section */
-        .specs-section {
-            background: var(--light);
-        }
-
-        .bom-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .bom-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .bom-card h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .bom-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .bom-card li {
-            padding: 5px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .bom-card li:last-child {
-            border-bottom: none;
+        .gallery-item img:hover {
+            transform: scale(1.05);
         }
 
         /* Pricing */
-        .pricing-section {
-            background: white;
+        .pricing {
+            background: var(--dark);
+            color: white;
+            padding: 80px 40px;
+        }
+
+        .pricing h2 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 900;
+        }
+
+        .price-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(211, 47, 47, 0.3);
+            padding: 50px 40px;
+            border-radius: 8px;
             text-align: center;
         }
 
-        .price-breakdown {
-            background: white;
-            border: 2px solid var(--primary);
-            border-radius: 10px;
-            padding: 40px;
-            max-width: 500px;
-            margin: 40px auto;
-            box-shadow: 0 5px 20px rgba(211, 47, 47, 0.1);
-        }
-
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .price-item:last-child {
-            border-bottom: none;
-        }
-
-        .price-total {
-            font-size: 1.5em;
-            font-weight: bold;
+        .price-amount {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 20px;
             color: var(--primary);
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid var(--primary);
         }
 
-        .price-note {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 15px;
-            font-style: italic;
+        .price-label {
+            font-size: 1.1em;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .price-details {
+            text-align: left;
+            margin: 40px 0;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .price-details li {
+            list-style: none;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .price-details li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
         }
 
         /* FAQ */
-        .faq-section {
+        .faq {
+            padding: 80px 40px;
             background: var(--light);
         }
 
+        .faq h2 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 900;
+        }
+
         .faq-grid {
-            display: grid;
-            gap: 15px;
-            margin-top: 40px;
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
         }
 
         .faq-item {
             background: white;
             border-radius: 8px;
-            border: 1px solid var(--border);
             overflow: hidden;
         }
 
         .faq-header {
+            padding: 25px;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            cursor: pointer;
-            user-select: none;
             transition: background 0.2s;
         }
 
@@ -440,18 +374,14 @@
         }
 
         .faq-header h4 {
-            color: var(--secondary);
             margin: 0;
-            flex: 1;
-            font-size: 1em;
+            font-size: 1.1em;
         }
 
         .faq-toggle {
             font-size: 1.5em;
-            color: var(--secondary);
+            color: var(--primary);
             transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 20px;
         }
 
         .faq-toggle.open {
@@ -461,101 +391,97 @@
         .faq-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 20px;
+            transition: max-height 0.3s;
+            padding: 0 25px;
         }
 
         .faq-content.open {
             max-height: 500px;
-            padding: 0 20px 20px 20px;
+            padding: 0 25px 25px;
         }
 
-        .faq-content p {
-            color: var(--text);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            text-align: center;
-            background: linear-gradient(135deg, var(--dark), #2a2a2a);
+        /* Contact */
+        .contact {
+            background: var(--dark);
             color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 3em;
+            margin-bottom: 40px;
+            font-weight: 900;
         }
 
         .contact-links {
-            margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
+            margin-top: 40px;
         }
 
         .contact-link {
             background: var(--primary);
             color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
+            padding: 15px 40px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
         }
 
         .contact-link:hover {
             background: #b71c1c;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
+            background: #0a0a0a;
             color: white;
+            padding: 40px;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-        }
-
-        footer img {
-            max-width: 120px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            opacity: 0.9;
-        }
-
-        footer p {
-            margin: 5px 0;
             opacity: 0.8;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5em;
+            }
+
+            .specs-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .specs h2, .videos h2, .gallery h2, .pricing h2, .faq h2, .contact h2 {
                 font-size: 2em;
             }
 
-            .hero p {
-                font-size: 1.1em;
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
 
             nav a {
-                margin-left: 10px;
-                font-size: 0.85em;
+                margin-left: 20px;
+                font-size: 0.9em;
             }
 
-            .cta-button {
-                display: block;
-                margin: 10px 0;
-            }
-
-            .contact-links {
-                flex-direction: column;
-            }
-
-            .contact-link {
-                width: 100%;
-            }
-
-            .gallery-item img {
-                height: 300px;
+            .nav-container {
+                padding: 0 20px;
             }
         }
     </style>
@@ -564,425 +490,204 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">🔥 Smalltownboost</div>
+            <div class="logo">🔥 SMALLTOWNBOOST</div>
             <div>
-                <a href="#problem">The Problem</a>
-                <a href="#solution">The Solution</a>
-                <a href="#build">Build Process</a>
-                <a href="#performance">Performance</a>
                 <a href="#specs">Specs</a>
+                <a href="#videos">Videos</a>
                 <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <img src="logo.jpg" alt="Smalltownboost Logo">
-            <h1>Transform Your Jimny M13A</h1>
-            <p>Bolt-on Eaton M65 supercharger bracket kit. Massive low-end torque. Instant throttle response. Proven in real-world conditions.</p>
-            <div style="margin-top: 30px;">
-                <button class="cta-button" onclick="document.getElementById('performance').scrollIntoView({behavior: 'smooth'})">See How It Works</button>
-                <button class="cta-button cta-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Yours Today</button>
+            <h1>JIMNY M65</h1>
+            <p>Bolt-on supercharger. Instant torque. Pure performance.</p>
+            <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+        </div>
+    </section>
+
+    <!-- Specs -->
+    <section id="specs" class="specs">
+        <div class="specs-container">
+            <div class="specs-content">
+                <h2>Designed for the M13A</h2>
+                <p>The Eaton M65 supercharger transforms your Jimny from gutless to legendary. Instant throttle response. Massive low-end torque. No waiting.</p>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <h4>⚡ Instant Power</h4>
+                        <p>Mechanical supercharger = no turbo lag. Boost arrives the moment you step on it.</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4>💥 Massive Torque</h4>
+                        <p>Low-end torque gains that completely change how your Jimny performs off-road and on.</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4>🛠️ 1-Day Install</h4>
+                        <p>Custom bracket kit designed for simplicity. Get boosted in a day.</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4>❄️ All-Weather</h4>
+                        <p>Proven in Alberta winters to +18°C. Daily driving, rock crawling, serious trails.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="logo.jpg" alt="Smalltownboost" class="logo-specs">
             </div>
         </div>
     </section>
 
-    <!-- The Problem Section -->
-    <section id="problem" class="problem-section">
-        <div class="problem-content">
-            <h2>Why Your Jimny Needs More Power</h2>
-            <p style="text-align: center; font-size: 1.1em; color: var(--text); margin-bottom: 30px;">
-                The Suzuki Jimny is legendary for reliability, but stock power delivery leaves you wanting more—especially off-road.
-            </p>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <h4>⛰️ Inadequate Low-End Torque</h4>
-                    <p>Struggling to power through rock crawls, deep sand, and technical terrain. You're constantly downshifting.</p>
-                </div>
-                <div class="problem-card">
-                    <h4>🐢 Sluggish Throttle Response</h4>
-                    <p>Lag between throttle input and power delivery. Frustrating in tight spots where precision matters.</p>
-                </div>
-                <div class="problem-card">
-                    <h4>😤 Gutless Feel</h4>
-                    <p>With modern tires and mods, the stock M13A feels underpowered. Daily driving feels labored.</p>
-                </div>
-                <div class="problem-card">
-                    <h4>💨 No Turbo Option Fits</h4>
-                    <p>Turbo kits are complex, expensive, and add lag. You need something simpler and more responsive.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Solution Section -->
-    <section id="solution" class="solution-section">
-        <div class="solution-content">
-            <h2>The Jimny M65 Supercharger Kit</h2>
-            <p style="text-align: center; font-size: 1.1em; color: var(--text); margin-bottom: 30px;">
-                A bolt-on mechanical supercharger that delivers instant power without complexity.
-            </p>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">💥</div>
-                    <h3>Massive Torque</h3>
-                    <p>Instant low-end power that completely transforms off-road and daily performance. The kind of torque that matters.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>No Turbo Lag</h3>
-                    <p>Mechanical supercharger = instant response. No waiting, no spooling. Pure, immediate power delivery.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🛠️</div>
-                    <h3>1-Day Install</h3>
-                    <p>Designed for simplicity. If you're ready, this comes together in approximately one day. Clean, straightforward design.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">⚙️</div>
-                    <h3>Off-the-Shelf Parts</h3>
-                    <p>Proven Eaton M65 supercharger. Rebuild kits are readily available. Simple, reliable, easy to maintain.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏔️</div>
-                    <h3>Trail-Proven</h3>
-                    <p>Tested in real conditions: Alberta winters to +18°C, daily driving, serious off-road use. It works.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Perfect for the M13A</h3>
-                    <p>The M65 is the sweet spot for the M13A. Great airflow without killing drivability or reliability.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Hardware Section -->
-    <section style="background: white; padding: 60px 20px;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2>The Heart: Eaton M65 Supercharger</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1.1em;">
-                A proven, mechanical supercharger from the Mercedes Kompressor lineup. Reliable, efficient, and built to last.
-            </p>
-            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-                <img src="m65-turbo.jpg" alt="Eaton M65 Supercharger" style="max-width: 500px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-            </div>
-            <div style="max-width: 800px; margin: 40px auto; text-align: center;">
-                <h3 style="color: var(--primary); margin-bottom: 20px;">Why the M65?</h3>
-                <p style="font-size: 1.05em; line-height: 1.8; color: var(--text);">
-                    The Eaton M65 is the <strong>sweet spot for the M13A</strong>. It delivers massive low-end torque without the complexity of turbocharging. No waiting for boost to spool up—just instant, mechanical power. Used in Mercedes Kompressor models for decades, it's proven reliable and easy to service. When rebuild time comes, kits are inexpensive and readily available.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Build Process Videos -->
-    <section id="build" class="videos-section">
-        <h2>See the Build Process</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 40px;">From concept to reality—watch how it came together, problems solved, and real engineering in action.</p>
-
+    <!-- Videos -->
+    <section id="videos" class="videos">
+        <h2>See it in Action</h2>
         <div class="video-grid">
-            <div class="video-item">
-                <div class="video-label">🔧 Build Process</div>
-                <video width="267" controls style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-                    <source src="videos/01_build_process.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="video-card">
+                <video controls><source src="videos/03_travis_vision.mp4" type="video/mp4"></video>
+                <div class="video-label">👨‍🔬 The Vision</div>
             </div>
-
-            <div class="video-item">
-                <div class="video-label">💡 Problem Solving</div>
-                <video width="267" controls style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-                    <source src="videos/02_problem_solving.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="video-item">
-                <div class="video-label">👨‍🔬 Travis's Vision</div>
-                <video width="267" controls style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-                    <source src="videos/03_travis_vision.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </section>
-
-    <!-- Performance & Testing Videos -->
-    <section id="performance" class="videos-section">
-        <h2>Real-World Performance</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 40px;">Watch it perform. Winter testing. Trail conditions. Durability under stress. This is what you get.</p>
-
-        <div class="video-grid">
-            <div class="video-item">
+            <div class="video-card">
+                <video controls><source src="videos/04_in_action.mp4" type="video/mp4"></video>
                 <div class="video-label">⚡ In Action</div>
-                <video width="267" controls style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-                    <source src="videos/04_in_action.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
             </div>
-
-            <div class="video-item">
+            <div class="video-card">
+                <video controls><source src="videos/05_test_drive.mp4" type="video/mp4"></video>
                 <div class="video-label">🚗 Test Drive</div>
-                <video width="267" controls style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-                    <source src="videos/05_test_drive.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
             </div>
-
-            <div class="video-item">
-                <div class="video-label">❄️ Winter Testing</div>
-                <video width="267" controls style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-                    <source src="videos/06_winter_testing.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="video-card">
+                <video controls><source src="videos/06_winter_testing.mp4" type="video/mp4"></video>
+                <div class="video-label">❄️ Winter Tested</div>
             </div>
-
-            <div class="video-item">
+            <div class="video-card">
+                <video controls><source src="videos/07_snow_fun.mp4" type="video/mp4"></video>
                 <div class="video-label">🏂 Snow Fun</div>
-                <video width="267" controls style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-                    <source src="videos/07_snow_fun.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
             </div>
-
-            <div class="video-item">
-                <div class="video-label">💪 Durability Test</div>
-                <video width="267" controls style="border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-                    <source src="videos/08_durability_test.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="video-card">
+                <video controls><source src="videos/08_durability_test.mp4" type="video/mp4"></video>
+                <div class="video-label">💪 Durability</div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-        <h2>Prototype Installation</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">Real installation photos from Travis's personal Jimny. This is what you'll receive.</p>
+    <!-- Gallery -->
+    <section id="gallery" class="gallery">
+        <h2>Real Installation</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="657388042_1639675567073408_8093226719779578230_n.jpg" alt="Supercharger installation">
-                <div class="gallery-caption">
-                    <p>Bracket & Mounting System</p>
-                </div>
+                <img src="657388042_1639675567073408_8093226719779578230_n.jpg" alt="Installation">
             </div>
             <div class="gallery-item">
-                <img src="661679050_1669379540747797_7481478028683903763_n.jpg" alt="Belt system">
-                <div class="gallery-caption">
-                    <p>Belt & Pulley Integration</p>
-                </div>
+                <img src="661679050_1669379540747797_7481478028683903763_n.jpg" alt="Details">
             </div>
             <div class="gallery-item">
-                <img src="658341335_2040094013387734_8984838484918978115_n.jpg" alt="Complete installation">
-                <div class="gallery-caption">
-                    <p>Final Assembly & Fit</p>
-                </div>
+                <img src="658341335_2040094013387734_8984838484918978115_n.jpg" alt="Final">
             </div>
         </div>
     </section>
 
-    <!-- Specifications Section -->
-    <section id="specs" class="specs-section">
-        <h2>Complete Bill of Materials</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 40px;">Everything you need for a complete, trail-proven supercharger setup.</p>
-
-        <div class="bom-grid">
-            <div class="bom-card">
-                <h4>Core Supercharger System</h4>
-                <ul>
-                    <li>✓ Eaton M65 Supercharger</li>
-                    <li>✓ Custom bracket kit</li>
-                    <li>✓ Crank pulley & drive belt</li>
-                    <li>✓ Idler pulleys (2x)</li>
-                </ul>
-            </div>
-
-            <div class="bom-card">
-                <h4>Air & Intake System</h4>
-                <ul>
-                    <li>✓ Intake piping</li>
-                    <li>✓ Charge piping</li>
-                    <li>✓ Subaru STI intercooler</li>
-                    <li>✓ Silicone couplers & clamps</li>
-                </ul>
-            </div>
-
-            <div class="bom-card">
-                <h4>Monitoring & Control</h4>
-                <ul>
-                    <li>✓ Adjustable blow-off valve</li>
-                    <li>✓ Boost gauge</li>
-                    <li>✓ Wideband O2 sensor</li>
-                    <li>✓ AFR gauge kit</li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="background: #fff3e0; padding: 25px; border-radius: 8px; margin-top: 30px; border-left: 4px solid var(--primary); max-width: 1000px; margin-left: auto; margin-right: auto;">
-            <h4 style="color: var(--primary); margin-bottom: 10px;">⚠️ What You'll Source Separately</h4>
-            <p style="margin-bottom: 15px;">For safe, reliable operation you'll also need:</p>
-            <ul style="list-style-position: inside; color: var(--text);">
-                <li><strong>Upgraded fuel injectors</strong> — Critical for proper fueling</li>
-                <li><strong>High-flow fuel pump</strong> — Supports forced induction demands</li>
-                <li><strong>ECU tuning/calibration</strong> — Essential for performance & reliability</li>
-                <li><strong>Colder spark plugs</strong> — Recommended for safety margin</li>
-                <li><strong>Oil catch can</strong> — Strongly recommended for longevity</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
         <h2>Pricing</h2>
-        <div class="price-breakdown">
-            <div class="price-item">
-                <span>Eaton M65 Supercharger (tested)</span>
-                <strong>$650</strong>
-            </div>
-            <div class="price-item">
-                <span>Custom Bracket Kit + Hardware</span>
-                <strong>$450</strong>
-            </div>
-            <div class="price-item">
-                <span>Blow-Off / Bypass Valve</span>
-                <strong>$90</strong>
-            </div>
-            <div class="price-item">
-                <span>AFR Gauge Kit</span>
-                <strong>$120</strong>
-            </div>
-            <div class="price-item">
-                <span>Intercooler (used, Subaru STI)</span>
-                <strong>$200</strong>
-            </div>
-            <div class="price-item">
-                <span>Intake Piping & Couplers</span>
-                <strong>$180</strong>
-            </div>
-            <div class="price-item">
-                <span>Belt, Pulleys & Components</span>
-                <strong>$150</strong>
-            </div>
-            <div class="price-total">
-                Base Kit: $1,840 CAD
-            </div>
-            <div class="price-note">
-                Plus shipping and taxes. ~1 day installation. Designed for 3–5 PSI reliable daily use with 91 octane fuel.
-            </div>
+        <div class="price-card">
+            <div class="price-amount">$1,840</div>
+            <div class="price-label">CAD + Shipping & Tax</div>
+            <ul class="price-details">
+                <li>Eaton M65 Supercharger</li>
+                <li>Custom Bracket Kit</li>
+                <li>Blow-Off Valve</li>
+                <li>Intercooler System</li>
+                <li>All Piping & Couplers</li>
+                <li>AFR Gauge Kit</li>
+                <li>Belt & Pulley System</li>
+            </ul>
+            <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Order Now</button>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <h2>Frequently Asked Questions</h2>
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <h2>Questions?</h2>
         <div class="faq-grid">
             <div class="faq-item">
                 <div class="faq-header" onclick="toggleFAQ(this)">
-                    <h4>How long does installation actually take?</h4>
+                    <h4>How long to install?</h4>
                     <div class="faq-toggle">+</div>
                 </div>
                 <div class="faq-content">
-                    <p>Roughly 1 day if you're prepared and have a shop or fabrication experience. Professional installation is recommended for best results and peace of mind.</p>
+                    <p>Roughly 1 day if you're prepared. Professional installation recommended.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header" onclick="toggleFAQ(this)">
-                    <h4>Will this fit my M13A?</h4>
+                    <h4>Will it fit my Jimny?</h4>
                     <div class="faq-toggle">+</div>
                 </div>
                 <div class="faq-content">
-                    <p>Yes, it's specifically designed for the Suzuki Jimny M13A (2007+). Perfect fit, proven on multiple vehicles.</p>
+                    <p>Yes. Designed specifically for M13A (2007+). Perfect fit, proven.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header" onclick="toggleFAQ(this)">
-                    <h4>Is ECU tuning really necessary?</h4>
+                    <h4>Do I need tuning?</h4>
                     <div class="faq-toggle">+</div>
                 </div>
                 <div class="faq-content">
-                    <p><strong>YES.</strong> Proper tuning is critical for reliability and performance. This kit is designed to work with 91 octane fuel and stock ECU at modest boost, but professional calibration is strongly recommended for safety and longevity.</p>
+                    <p><strong>YES.</strong> ECU calibration is critical. Works with 91 octane + professional tuning.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header" onclick="toggleFAQ(this)">
-                    <h4>Why the M65 and not a different supercharger?</h4>
+                    <h4>Why the M65?</h4>
                     <div class="faq-toggle">+</div>
                 </div>
                 <div class="faq-content">
-                    <p>The M65 is the sweet spot for the M13A. It offers the best balance of power, reliability, and drivability. Larger units add complexity; smaller ones don't deliver enough low-end torque.</p>
+                    <p>Perfect balance of power, reliability, and drivability for the M13A. Proven OEM unit.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header" onclick="toggleFAQ(this)">
-                    <h4>How much power am I getting?</h4>
+                    <h4>Is it reliable?</h4>
                     <div class="faq-toggle">+</div>
                 </div>
                 <div class="faq-content">
-                    <p>Expect significant low-end torque gains—exactly what Jimny owners need for rock crawling, trails, and daily driving. The M65 delivers consistent, usable power across the RPM range.</p>
+                    <p>Eaton M65 is built to last. Used in Mercedes Kompressor for decades. Rebuild kits readily available.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header" onclick="toggleFAQ(this)">
-                    <h4>What's the reliability story?</h4>
+                    <h4>Can I see it working?</h4>
                     <div class="faq-toggle">+</div>
                 </div>
                 <div class="faq-content">
-                    <p>The Eaton M65 is a proven OEM unit built to last. Seals and bearings rarely need servicing. When they do, rebuild kits are readily available and inexpensive.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-header" onclick="toggleFAQ(this)">
-                    <h4>Can I see it installed?</h4>
-                    <div class="faq-toggle">+</div>
-                </div>
-                <div class="faq-content">
-                    <p>Absolutely. Check out the photo gallery and build/performance videos above. This is the real prototype on Travis's personal Jimny—you're seeing exactly what you'll get.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-header" onclick="toggleFAQ(this)">
-                    <h4>What if I'm not mechanically inclined?</h4>
-                    <div class="faq-toggle">+</div>
-                </div>
-                <div class="faq-content">
-                    <p>No problem. We can connect you with shops that specialize in Jimny performance work. Professional installation is always the safest, smartest option.</p>
+                    <p>Watch the videos above. Real prototype on Travis's personal Jimny. This is exactly what you get.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2 style="color: white;">Ready to Transform Your Jimny?</h2>
-        <p style="font-size: 1.1em;">Message with questions or to place an order.</p>
-
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Ready to Transform Your Jimny?</h2>
+        <p>Reach out. Let's get you boosted.</p>
         <div class="contact-links">
-            <a href="https://www.facebook.com/travis.watkins.940" class="contact-link">💬 Message on Facebook</a>
-            <a href="mailto:contact@smalltownboost.com" class="contact-link">📧 Email</a>
-            <a href="https://www.instagram.com/smalltownboost" class="contact-link">📸 Instagram</a>
+            <a href="https://www.facebook.com/travis.watkins.940" class="contact-link">Message Travis</a>
+            <a href="https://www.instagram.com/smalltownboost" class="contact-link">Follow Us</a>
+            <a href="mailto:contact@smalltownboost.com" class="contact-link">Email</a>
         </div>
-
-        <p style="margin-top: 40px; font-size: 0.95em; opacity: 0.8;">
-            Located in Alberta, Canada. Ship worldwide. Custom fabrication available for other platforms.
-        </p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <img src="logo.jpg" alt="Smalltownboost Logo">
         <p>&copy; 2026 Smalltownboost. All rights reserved.</p>
-        <p>Built for Jimny lovers. Trail-proven. Reliable. Simple.</p>
+        <p>Trail-proven. Reliable. Simple.</p>
     </footer>
 
     <script>
@@ -990,7 +695,6 @@
             const content = header.nextElementSibling;
             const toggle = header.querySelector('.faq-toggle');
 
-            // Close all other FAQs
             document.querySelectorAll('.faq-content').forEach(c => {
                 if (c !== content) {
                     c.classList.remove('open');
@@ -998,7 +702,6 @@
                 }
             });
 
-            // Toggle current FAQ
             content.classList.toggle('open');
             toggle.classList.toggle('open');
         }
