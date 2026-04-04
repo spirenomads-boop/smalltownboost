@@ -503,6 +503,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .gallery-item img {
+                height: 300px;
+            }
+
             nav a {
                 margin-left: 20px;
                 font-size: 0.9em;
@@ -510,6 +514,180 @@
 
             .nav-container {
                 padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 1.2em;
+                letter-spacing: 1px;
+            }
+
+            /* Pricing cards stack on mobile */
+            [style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            .price-card {
+                max-width: 100%;
+            }
+
+            /* Reduce padding on mobile */
+            .specs, .videos, .gallery, .pricing, .faq, .contact {
+                padding: 60px 20px !important;
+            }
+
+            #specs {
+                padding: 60px 20px !important;
+            }
+
+            /* Contact links wrap better */
+            .contact-links {
+                gap: 15px;
+            }
+
+            .contact-link {
+                padding: 12px 30px;
+                font-size: 0.95em;
+            }
+
+            /* Hero content padding */
+            .hero-content {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Very small screens */
+            .hero h1 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+
+            .hero p {
+                font-size: 1em;
+                margin-bottom: 25px;
+            }
+
+            .cta-primary {
+                padding: 14px 35px;
+                font-size: 0.95em;
+            }
+
+            .logo {
+                font-size: 1em;
+                letter-spacing: 0.5px;
+            }
+
+            nav a {
+                margin-left: 12px;
+                font-size: 0.8em;
+            }
+
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .specs h2, .videos h2, .gallery h2, .pricing h2, .faq h2, .contact h2 {
+                font-size: 1.6em;
+                margin-bottom: 40px;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+
+            .specs, .videos, .gallery, .pricing, .faq, .contact {
+                padding: 50px 15px !important;
+            }
+
+            #specs {
+                padding: 50px 15px !important;
+            }
+
+            .price-amount {
+                font-size: 2.5em;
+            }
+
+            .price-label {
+                font-size: 0.95em;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-link {
+                width: 100%;
+                padding: 12px 20px;
+                text-align: center;
+                font-size: 0.9em;
+            }
+
+            .faq-header {
+                padding: 20px;
+            }
+
+            .faq-header h4 {
+                font-size: 1em;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .video-label {
+                padding: 15px;
+                font-size: 0.95em;
+            }
+
+            .hero {
+                margin-top: 50px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            /* Ultra-small screens */
+            .hero h1 {
+                font-size: 1.5em;
+            }
+
+            .hero p {
+                font-size: 0.95em;
+            }
+
+            nav {
+                padding: 15px 0;
+            }
+
+            .logo {
+                font-size: 0.9em;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 0.75em;
+            }
+
+            .cta-primary {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+
+            .price-card {
+                padding: 30px 20px !important;
+            }
+
+            .price-amount {
+                font-size: 2em;
             }
         }
     </style>
