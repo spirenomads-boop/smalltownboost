@@ -1,0 +1,21 @@
+# Robots.txt for smalltownboost.com
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /videos/
+Allow: /*.jpg
+Allow: /*.css
+Allow: /*.js
+
+# Prevent indexing of private/temporary files
+Disallow: /.env
+Disallow: /.git
+Disallow: /.github
+Disallow: /.tmp
+
+# Sitemap
+Sitemap: https://smalltownboost.com/sitemap.xml
+Sitemap: https://www.smalltownboost.com/sitemap.xml
+
+# Crawl delay (optional - be respectful)
+Crawl-delay: 1
